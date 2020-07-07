@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>로그인</title>
+    <link rel="stylesheet" type="text/css" href="base.css">
+    <style>
+        
+        *{
+        box-sizing: border-box;
+        }
+        
+        main{
+            width: 500px;
+            height: 500px;
+            margin: auto;
+            border: 1px solid #3333;
+            
+        }
+        
+        
+        
+        .login-wrap{
+            
+            width: 320px;
+            text-align: center;
+            margin: 0px auto;
+        }
+        .form-input{
+           
+            padding: 10px;
+            font-size: 15px;
+            width: 100%;
+            border: 1px solid #aaa;
+            margin: 5px 0px;
+        }
+        
+        
+        
+        h1{
+            color: crimson;
+            font-family: 고딕;
+            font-size: 40px;
+        }
+        
+        .login-id{
+            padding-left: 50px;
+            background-image: url("../image/ID.jpg");
+            background-repeat: no-repeat;
+            background-size: 30px;
+            background-position: 3px 3px;
+           
+        }
+    
+        .login-pw{
+            padding-left: 50px;
+            background-image: url("../image/pw.png");
+            background-repeat: no-repeat;
+            background-size: 30px;
+            background-position: 3px 3px;
+        }
+        
+        
+        input:nth-child(11){
+            background-color: #C80A1E;
+            /*border-width: 0.5px;*/
+            border: 1px solid transparent;
+            width: 200px;
+            color: white;
+        }
+        
+        .form-box{
+            border-left: 20px;
+        }
+        
+        .form-join{
+            
+        }
+        
+        .form-find{
+            
+        }
+        .login-checkbox-wrap{
+            text-align: left;
+            
+        }
+        
+        
+    </style>
+</head>
+<body>
+<main>
+ <div class = "login-wrap">
+  <h1>로그인</h1>
+   <form action="?" method="post">
+   
+   <!--아이디/비밀번호입력창-->
+    <input class = "form-input login-id" type="text" name="member_id" placeholder="아이디입력" required>
+    <input class = "form-input login-pw" type="password" name="member_pw" placeholder="비밀번호입력" required>
+     <br>
+    <!--아이디저장 입력창-->
+     <div class="login-checkbox-wrap">
+    <input class = "form-box login-checkbox" type="checkbox" name="login_save">아이디저장
+       </div>
+    <br><br>
+    
+    <!--신규 회원가입버튼-->
+    <input class = "form-join join-submit" type="submit" value="신규 회원가입">
+    
+    <!--아이디, 비밀번호찾기버튼-->
+    <input class = "form-find findid,pw-submit" type="submit" value="아이디, 비밀번호찾기">
+    <br><br>
+    
+    
+    
+       <!--로그인버튼-->
+    <input class = "form-input login-submit" type="submit" value="로그인">
+    <br>
+     </form>
+    </div>
+    </main>
+</body>
+</html>
