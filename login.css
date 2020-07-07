@@ -1,0 +1,609 @@
+/*
+공용 스타일 파일(css 파일)
+
+- style 태그 내부에 작성하는 내용만 기입
+- 일룸대표색상
+빨강 : #C80A1E;
+회색 : #3333;
+*/
+@charset "UTF-8";
+
+/*
+	웹 폰트 등록
+*/
+@font-face {
+	font-family: NanumGothicCoding;
+	src: url("../font/NanumGothicCoding.ttf");
+}
+
+/* 
+공통적으로 적용될 스타일 
+- box-sizing : 폭 계산과 관련된 옵션
+- font-family : 페이지 전체 글꼴과 관련된 옵션
+	- PC에 존재하는 글꼴만 사용할 수 있다
+	- 웹 폰트(Web Font)를 이용해서 이 문제를 해결할 수 있다
+		- 파워포인트에 글꼴을 첨부시키는 것과 같은 원리
+		- 용량이 커지기 때문에 로딩이 길어지지만 대신 모든 사용자가 동일한 글꼴을 볼 수 있다
+*/
+* {
+	box-sizing: border-box;
+	font-family: nanumBarunPen;
+}
+
+main {
+	text-align: center;
+	width: 500px;
+	height: 550px;
+	margin: auto;
+	border: 1px solid #aaa;
+}
+
+.login-wrap {
+	width: 320px;
+	text-align: center;
+	margin: 0px auto;
+}
+
+/*아이디, 비번입력창*/
+.input-wrap {
+	text-align: center;
+	margin: 0px auto;
+}
+
+.form-input {
+	width: 320px;
+	padding: 10px;
+	font-size: 15px;
+	border: 1px solid black;
+	margin: 5px 0px;
+}
+
+h1 {
+	color: crimson;
+	font-family: 고딕;
+	font-size: 40px;
+}
+
+.checkbox-wrap {
+	width: 270px;
+	/*로그인 저장 체크박스 위치*/
+}
+
+.login-id {
+	padding-left: 50px;
+	background-image: url("../image/ID.jpg");
+	background-repeat: no-repeat;
+	background-size: 30px;
+	background-position: 3px 3px;
+}
+
+.login-pw {
+	padding-left: 50px;
+	background-image: url("../image/pw.png");
+	background-repeat: no-repeat;
+	background-size: 30px;
+	background-position: 3px 3px;
+}
+
+input:nth-child(11) {
+	background-color: #C80A1E;
+	/*border-width: 0.5px;*/
+	border: 1px solid transparent;
+	width: 200px;
+	color: white;
+}
+
+.form-box {
+	border-left: 20px;
+}
+
+.login-checkbox-wrap {
+	text-align: left;
+}
+
+/*대표버튼*/
+.click-btn {
+	text-align: center;
+	padding: 1rem;
+	font-size: 16px;
+	width: 45%;
+	background-color: #C80A1E;
+	border: none;
+	color: white;
+	cursor: pointer;
+}
+
+.click-btn:hover {
+	padding: 1rem;
+	font-size: 16px;
+	width: 50%;
+	background-color: #C80A1E;
+	border: none;
+	color: white;
+}
+
+/* 로그인, 회원가입시 설정조건
+user_Id:  regex =/^[a-z0-9]{8-20}$/g;
+
+user_Pw: regex=/[a-zA-Z0-9]{8,16}/g;
+*/
+
+/*
+이미지 관련 스타일
+- 기본 스타일은 .img
+- 확장 스타일은 5가지로 분류
+    - .img-border : 마우스가 올라가면 테두리가 생성
+    - .img-shadow : 마우스가 올라가면 그림자가 생성
+    - .img-transparent : 마우스가 올라가면 이미지가 선명
+    - .img-circle : 이미지가 원형으로 처리되도록 구현
+    - .img-round : 이미지가 둥근 모서리를 갖도록 구현
+*/
+.img {
+	
+}
+
+.img.img-border {
+	border: 1px solid transparent;
+}
+
+.img.img-border:hover {
+	border-color: black;
+}
+
+.img.img-shadow:hover {
+	box-shadow: 0px 0px 3px 2px #333;
+}
+
+.img.img-transparent {
+	opacity: 0.5;
+}
+
+.img.img-transparent:hover {
+	opacity: 1;
+}
+
+.img.img-circle {
+	border-radius: 50%;
+}
+
+.img.img-round {
+	border-radius: 5px;
+}
+
+/* 
+    rem 은 글자 1개의 높이에 해당하는 크기
+*/
+
+/*
+    그냥 th, td가 아니라
+    .table 안에 있는 th, td로 범위를 제한하여 사용!
+    - 다른 스타일과 충돌 없이 사용이 가능
+    [1] 직계 자식 태그만 선택( > )
+    .table > thead > tr > th : .table 바로 밑의 thead 바로 밑의... 라는 뜻
+    [2] 후손 태그 전체 선택
+    .table th : .table 안에 있는 모든 th
+*/
+.table {
+	width: 100%;
+}
+
+.table>thead>tr>th, .table>thead>tr>td, .table>tbody>tr>th, .table>tbody>tr>td,
+	.table>tfoot>tr>th, .table>tfoot>tr>td {
+	padding: 0.5rem;
+	text-align: center;
+}
+
+/* 확장 스타일 1번 : .table-border 로 테두리를 부여 */
+.table.table-border {
+	/* 테이블에 테두리를 부여*/
+	border: 1px solid black;
+	/* 테두리 병합 */
+	border-collapse: collapse;
+}
+
+.table.table-border>thead>tr>th, .table.table-border>thead>tr>td, .table.table-border>tbody>tr>th,
+	.table.table-border>tbody>tr>td, .table.table-border>tfoot>tr>th,
+	.table.table-border>tfoot>tr>td {
+	/* 칸에 테두리를 부여 */
+	border: 1px solid black;
+}
+
+/* 확장 스타일 2번 : .table-stripe 로 줄무늬 부여 */
+.table.table-stripe>tbody>tr:nth-child(2n) {
+	/* RGB Hex String */
+	background-color: #ffeaa7;
+}
+
+.table.table-stripe>thead>tr {
+	background-color: #fdcb6e;
+}
+
+/* 확장 스타일 3번 : .table-sideopen 으로 옆트임 테이블 구현 */
+.table.table-sideopen {
+	border-top: 3px solid black;
+	border-bottom: 3px solid black;
+	border-collapse: collapse;
+}
+
+.table.table-sideopen>tbody {
+	border-top: 3px solid black;
+	border-bottom: 3px solid black;
+}
+
+.table.table-sideopen>tbody>tr {
+	border-bottom: 1px solid black;
+}
+
+/* 확장 스타일 4번 : .table-hover 로 마우스 감지 테이블 구현 */
+.table.table-hover>tbody>tr:hover {
+	background-color: #dfe6e9;
+}
+
+/*
+    모달(modal) 스타일
+    - 모달은 다음과 같은 형태로 구성되어야 한다.
+    <div class="modal-wrap">
+        <div class="modal">
+        </div>
+    </div>
+    모달을 보여주고 싶다면 .modal-wrap에 .on 을 추가한다.
+    <div class="modal-wrap on">
+        <div class="modal">
+        </div>
+    </div>
+*/
+.modal-wrap {
+	/* 전체를 가리기 위한 설정 */
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	/* opacity로 투명도를 조절하면 내용물도 적용된다 */
+	/* opacity:0.5; */
+	/* 배경색에 알파값을 설정하면 내용물에 영향이 없다 */
+	background-color: rgba(0, 0, 0, 0.5);
+	/* 모달은 기본적으로 표시가 되면 안된다 */
+	display: none;
+}
+
+.modal-wrap.on {
+	display: block;
+}
+
+.modal {
+	/* 폭이나 높이는 해당 페이지에서 정의한다(기본값 400x400) */
+	width: 400px;
+	height: 400px;
+	background-color: white;
+	/* 중앙에 배치하기 위한 코드 */
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	/* 
+    방법 1 : margin 을 활용 : 폭이 고정일 경우 
+    - 폭을 반드시 알아야 함
+    - 모든 브라우저에서 지원
+    */
+	/*
+    margin-left: -200px;
+    margin-top: -200px;
+    */
+	/* 
+    방법2 : 이동 스타일을 사용하는 경우 
+    - 이동할 때 기준이 자기자신이므로 폭을 몰라도 됨
+    - 지원하지 않는 브라우저가 있음
+    */
+	transform: translate(-50%, -50%);
+}
+
+/*
+    메뉴 스타일
+    - 메뉴와 같은 계층형 구조는 ul-li로 일반적으로 구현
+    - list-style : none; 으로 앞에 점을 제거
+    - ul이 가지고 있는 기본 padding, margin을 제거
+    작성시 주의사항
+    - 반드시 다음 구조로 메뉴를 구현해야 한다.
+    <ul class="menu">
+        <li>
+            <a>1차 메뉴명</a>
+            <ul>
+                <li>
+                    <a>2차 메뉴명</a>
+                    <ul>
+                    ...(3차 이후도 마찬가지로 구현)...
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+*/
+.menu, .menu ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	background-color: black;
+}
+/* 1단계 메뉴는 우측으로 가야 하므로 inline-block 설정 */
+.menu>li {
+	display: inline-block;
+}
+
+/* 모든 li는 relative 설정 */
+.menu li {
+	position: relative;
+	padding: 0.75rem;
+	width: 150px;
+	text-align: center;
+	cursor: pointer;
+}
+/* 2단계 메뉴부터는 position을 absolute로 설정 */
+/* .menu li > ul {*/
+.menu>li ul {
+	position: absolute;
+	left: 0; /* 기준과 왼쪽을 맞춰라 */
+	top: 100%; /* 기준의 바닥에 시작점을 맞춰라 */
+}
+
+.menu li:hover {
+	background-color: gray;
+}
+/*menu의 링크는 스타일을 다르게 지정*/
+/* .menu > li > a { */
+.menu a {
+	color: white;
+	text-decoration: none;
+}
+
+.menu li:hover>a {
+	color: #dfe4ea;
+}
+
+/* 처음에는 2단계 이후의 메뉴가 나오지 않도록 처리 */
+/* 커서가 메뉴에 올라가면 하위 메뉴가 나오도록 처리 */
+.menu>li ul {
+	display: none;
+}
+
+.menu li:hover>ul {
+	display: block;
+}
+
+/* 3단계 이후부터는 우측에 나오도록 위치를 수정(재정의) */
+.menu>li>ul>li ul {
+	top: 0;
+	left: 100%;
+}
+
+/*
+    확장 스타일 : 메뉴를 상단에 붙이고 싶은 경우의 스타일
+*/
+.menu.menu-fixed {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+}
+
+/* 브라우저마다 다른 설정들을 초기화 */
+html, body {
+	padding: 0;
+	margin: 0;
+}
+
+/* test 상태일 때 테두리를 설정 */
+body[test] main, body[test] header, body[test] nav, body[test] section,
+	body[test] footer, body[test] article, body[test] div, body[test] span,
+	body[test] p, body[test] label, body[test] aside {
+	border: 1px dotted black;
+}
+
+/* 
+    컨텐츠 영역에 대한 폭 제어 스타일 
+    - 모든 article은 가운데 정렬을 원칙으로 한다.
+    - 폭은 w-비율 형태의 class로 5단위로 지원한다.
+*/
+article {
+	margin: auto;
+}
+
+article.w-100 {
+	width: 100%;
+}
+
+article.w-95 {
+	width: 95%;
+}
+
+article.w-90 {
+	width: 90%;
+}
+
+article.w-85 {
+	width: 85%;
+}
+
+article.w-80 {
+	width: 80%;
+}
+
+article.w-75 {
+	width: 75%;
+}
+
+article.w-70 {
+	width: 70%;
+}
+
+article.w-65 {
+	width: 65%;
+}
+
+article.w-60 {
+	width: 60%;
+}
+
+article.w-55 {
+	width: 55%;
+}
+
+article.w-50 {
+	width: 50%;
+}
+
+article.w-45 {
+	width: 45%;
+}
+
+article.w-40 {
+	width: 40%;
+}
+
+article.w-35 {
+	width: 35%;
+}
+
+article.w-30 {
+	width: 30%;
+}
+
+article.w-25 {
+	width: 25%;
+}
+
+article.w-20 {
+	width: 20%;
+}
+
+article.w-15 {
+	width: 15%;
+}
+
+article.w-10 {
+	width: 10%;
+}
+
+/*
+컨텐츠 내부의 줄(row) 스타일
+- 기본 간격을 10px로 설정(상하 margin)
+*/
+article>div.row {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+/* 여백 설정이 필요할 때 사용할 수 있는 공간 */
+div.row-empty {
+	height: 20px;
+}
+
+/* article 내에 사용하는 헤더는 가운데 정렬 */
+article h1, article h2, article h3, article h4, article h5, article h6 {
+	text-align: center;
+}
+
+/*
+입력창 스타일
+- form-input : 100% 크기의 입력창
+- form-btn : 100% 크기의 버튼
+*/
+.form-input, .form-btn {
+	width: 100%;
+	padding: 0.5rem;
+	outline: none; /* 선택 시 자동 부여되는 테두리 제거 */
+	border: 1px solid black;
+}
+
+.form-input:focus {
+	border-color: blue;
+}
+
+.form-btn {
+	background-color: #2f3542;
+	color: white;
+	cursor: pointer;
+}
+
+.form-btn:hover {
+	background-color: #57606f;
+}
+
+/*
+입력창 확장 스타일
+- form-input-image : 좌측에 그림이 들어갈 입력창
+- form-inline : 폭 100%를 사용하지 않겠다!
+*/
+.form-input.form-input-image {
+	padding-left: 3rem;
+}
+
+.form-input.form-inline, .form-btn.form-inline {
+	width: auto;
+}
+
+/* 정렬과 관련된 스타일 : 기존의 스타일과 충돌이 발생할 경우 먼저 적용되도록 중요하다고 표시! */
+.left {
+	text-align: left !important;
+}
+
+.center {
+	text-align: center !important;
+}
+
+.right {
+	text-align: right !important;
+}
+
+/* textarea는 수직으로만 크기조정이 가능하도록 구현 */
+textarea.form-input {
+	resize: vertical;
+}
+
+/*
+    pagination 스타일
+*/
+.pagination a {
+	color: gray;
+	text-decoration: none;
+	display: inline-block;
+	padding: 0.5rem;
+	min-width: 2.5rem;
+	text-align: center;
+	border: 1px solid transparent;
+}
+
+.pagination a:hover, /*마우스 올라감*/ .pagination .on { /*활성화 */
+	border: 1px solid gray;
+	color: red;
+}
+
+/*
+    float 영역 스타일링
+    - .float-box 가 끝나면 반드시 clear:both를 실행!
+*/
+.float-box::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+/*
+    float 확장 스타일링
+    - .float-left로 왼쪽부터 배치되도록 구현
+    - .float-right로 오른쪽부터 배치되도록 구현
+    - 내부 영역도 자체적으로 left, right를 선택하도록 구현
+*/
+.float-box.float-left>* {
+	float: left;
+}
+
+.float-box.float-right>* {
+	float: right;
+}
+
+.float-box>.float-left {
+	float: left;
+}
+
+.float-box>.float-right {
+	float: right;
+}
